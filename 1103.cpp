@@ -19,13 +19,16 @@ void Go(int cur)
     /*cout<<sum<<" "<<tmp.size()<<" "<<cur<<" : ";
     for(int i=0;i<tmp.size();++i)
         cout<<tmp[i]<<" ";
-    cout<<endl;*/
-    //system("pause");
+    cout<<endl;
+    system("pause");*/
     if(sum>n||tmp.size()>k)
         return;
 
     if(sum==n&&tmp.size()==k)
+    {
         v.push_back(tmp);
+        return;
+    }
 
     if(tmp.size()>=k)
         return;
@@ -53,6 +56,7 @@ void Go(int cur)
             for(int j=0;j<remain;++j)
                 tmp.pop_back();
         }
+        pushnum.clear();
     }
     else if(cur==cv.size()-1)
     {
@@ -72,6 +76,7 @@ void Go(int cur)
             if(sum+cv[i]>n)
                 continue;
             double num=pow((double)cv[i],(double)1.0/p);
+            //cout<<cv[i]<<" "<<num<<endl;
             int tnum=(int)num;
             tmp.push_back(tnum);
             sum+=cv[i];
@@ -102,13 +107,11 @@ bool comp(const vector<int> a, const vector<int> b)
         }
     }
     if(k==-1)
-        return true;
+        return a[0]>b[0];
     for(int i=k+1;i<a.size();++i)
     {
-        if(a[i]>b[i])
-            return true;
-        else
-            return false;
+        if(a[i]!=b[i])
+            return a[i]>b[i];
     }
     return true;
 }
@@ -127,6 +130,13 @@ int main()
         Map[6].push_back(pow(i,6));
     Map[7].push_back(128);
     Map[7].push_back(1);
+    /*for(map<int,vector<int> >::iterator it=Map.begin();it!=Map.end();++it)
+    {
+        cout<<it->first<<" : ";
+        for(int i=0;i<it->second.size();++i)
+            cout<<it->second[i]<<" ";
+        cout<<endl;
+    }*/
     cin>>n>>k>>p;
     int start=0;
     while(Map[p][start]>n&&start<Map[p].size())
@@ -147,6 +157,16 @@ int main()
             printf("%d^%d",v[0][j],p);
         }
         printf("\n");
+        /*for(int i=0;i<v.size();++i)
+        {
+            for(int j=0;j<v[i].size();++j)
+            {
+                if(j!=0)
+                    printf(" + ");
+                printf("%d^%d",v[i][j],p);
+            }
+            printf("\n");
+        }*/
     }
     return 0;
 }
