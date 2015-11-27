@@ -11,7 +11,7 @@ set<int>::iterator it;
 
 int Hash(char* s)
 {
-    return (s[0]-'A')*1000+(s[1]-'A')*100+(s[2]-'A')*10+s[3]-'0';
+    return (s[0]-'A')*6760+(s[1]-'A')*260+(s[2]-'A')*10+s[3]-'0';
 }
 
 int main()
