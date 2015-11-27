@@ -69,6 +69,8 @@ int main()
         else
             printf("%s",col[i].c_str());
     }
+    if(!nonzero)
+        printf("0");
     printf("\n");
     return 0;
 }
