@@ -40,8 +40,8 @@ int main()
         v.push_back(p);
     }
     sort(v.begin(),v.end(),comp1);
-    cout<<v[0].id<<" ";
+    printf("%s ",v[0].id);
     sort(v.begin(),v.end(),comp2);
-    cout<<v[0].id<<endl;
+    printf("%s\n",v[0].id);
     return 0;
 }
