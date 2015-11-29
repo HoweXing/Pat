@@ -10,8 +10,6 @@ int tag,radix;
 long long otoi(char *s, long long r)
 {
     long long base=1,num=0;
-    //cout<<strlen(s)<<endl;
-    //int total=0;
     for(int i=strlen(s)-1;i>=0;--i)
     {
         if(s[i]>='0'&&s[i]<='9')
@@ -19,9 +17,7 @@ long long otoi(char *s, long long r)
         else
             num+=((s[i]-'a'+10)*base);
         base*=r;
-        //total+=num;
     }
-    //cout<<r<<" "<<num<<" "<<total<<endl;
     return num;
 }
 
@@ -42,7 +38,6 @@ int findMax(char *s)
 int main()
 {
     cin>>n1>>n2>>tag>>radix;
-    //cout<<n1<<" "<<n2<<" "<<tag<<" "<<radix<<endl;
     long long ln1,ln2,cmp;
     char var[11];
     long long start,re=-1,e;
@@ -56,7 +51,6 @@ int main()
         cout<<radix<<endl;
         return 0;
     }
-
     if(tag==1)
     {
         ln1=otoi(n1,radix);
@@ -73,29 +67,6 @@ int main()
         e=(ln2+1)>36?(ln2+1):36;
         strcpy(var,n1);
     }
-    /*long long l=start;
-    long long r=e;
-    long long mid=(l+r)/2;
-    while(l<r)
-    {
-        //cout<<mid<<endl;
-        long long tmp=otoi(var,mid);
-        if(tmp==cmp)
-        {
-            re=mid;
-            break;
-        }
-        if(tmp<cmp)
-        {
-            l=mid;
-            mid=(l+r)/2;
-        }
-        else
-        {
-            r=mid;
-            mid=(l+r)/2;
-        }
-    }*/
     if(strlen(var)==1)
     {
         if(otoi(var,start)==cmp)
@@ -109,7 +80,6 @@ int main()
         while(l<=r)
         {
             mid=(l+r)/2;
-            //cout<<l<<" "<<mid<<" "<<r<<endl;
             long long tmp=otoi(var,mid);
             if(tmp==cmp)
             {
@@ -125,17 +95,6 @@ int main()
                 r=mid-1;
             }
         }
-        /*for(int i=start;i<=e;++i)
-        {
-            long long tmp=otoi(var,i);
-            if(cmp<tmp)
-                break;
-            if(cmp==tmp)
-            {
-                re=i;
-                break;
-            }
-        }*/
     }
     if(re==-1)
         cout<<"Impossible"<<endl;
