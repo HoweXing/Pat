@@ -2,13 +2,14 @@
 #include <iostream>
 #include <map>
 #include <vector>
+#define INF 0x7f7f7f7f
 using namespace std;
 
 int Map[501][501]={-1};
 int n,m,from,to;
 vector<int> teams;
 int visited[501];
-int mindist=99999999,maxnum=0;
+int mindist=INF,maxnum=0;
 int cnt=0;
 
 void dfs(int cur,int dist,int num)
