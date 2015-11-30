@@ -51,9 +51,9 @@ int main()
     for(int i=0;i<=maxlevel;++i)
     {
         if(i!=0)
-            printf(" ");
-        printf("%d",nochild[i]);
+            cout<<" ";
+        cout<<nochild[i];
     }
-    printf("\n");
+    cout<<endl;
     return 0;
 }

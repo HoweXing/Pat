@@ -24,9 +24,9 @@ int main()
     for(int i=top;i>=0;--i)
     {
         if(i!=top)
-            printf(" ");
-        printf("%s",s[i].c_str());
+            cout<<" ";
+        cout<<s[i];
     }
-    printf("\n");
+    cout<<endl;
     return 0;
 }

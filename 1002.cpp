@@ -7,20 +7,20 @@ int main()
 {
     int k;
     map<int,double> Map;
-    cin>>k;
+    scanf("%d",&k);
     for(int i=0;i<k;++i)
     {
         int n;
         double num;
-        cin>>n>>num;
+        scanf("%d%lf",&n,&num);
         Map[n]+=num;
     }
-    cin>>k;
+    scanf("%d",&k);
     for(int i=0;i<k;++i)
     {
         int n;
         double num;
-        cin>>n>>num;
+        scanf("%d%lf",&n,&num);
         Map[n]+=num;
     }
     int cnt=0;
