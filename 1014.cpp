@@ -41,7 +41,7 @@ int findwin()
 
 int main()
 {
-    cin>>n>>m>>k>>q;
+    scanf("%d%d%d%d",&n,&m,&k,&q);
     for(int i=0;i<k;++i)
     {
         scanf("%d",&tmp);
@@ -71,7 +71,6 @@ int main()
         cap[c.win]--;
         pos--;
         Queue.push(c);
-        //cout<<"in "<<c.id<<" "<<c.e<<" "<<c.win<<" "<<cap[c.win]<<endl;
     }
     while(!Queue.empty())
     {
@@ -108,7 +107,6 @@ int main()
             cap[c.win]--;
             pos--;
             Queue.push(c);
-            //cout<<"in "<<c.id<<" "<<c.e<<" "<<c.win<<" "<<cap[c.win]<<endl;
         }
     }
     for(int i=0;i<q;++i)

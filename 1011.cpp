@@ -20,7 +20,7 @@ int Best(double *g)
     return id;
 }
 
-string crt[NUM]={"W","T","L"};
+char crt[NUM]={'W','T','L'};
 
 int main()
 {
@@ -28,9 +28,9 @@ int main()
     for(int i=0;i<NUM;++i)
     {
         for(int j=0;j<NUM;++j)
-            cin>>games[i][j];
+            scanf("%lf",&games[i][j]);
         int id=Best(games[i]);
-        cout<<crt[id]<<"  ";
+        printf("%c ",crt[id]);
         sum*=games[i][id];
     }
     sum=sum*0.65;

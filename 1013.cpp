@@ -9,26 +9,6 @@ int n,m,k;
 vector<int> Map[1001];
 int visited[1001];
 
-void bfs(int city)
-{
-    queue<int> q;
-    q.push(city);
-    visited[city]=1;
-    while(!q.empty())
-    {
-        int cur=q.front();
-        q.pop();
-        for(int i=0;i<Map[cur].size();++i)
-        {
-            if(visited[Map[cur][i]]!=1)
-            {
-                q.push(Map[cur][i]);
-                visited[Map[cur][i]]=1;
-            }
-        }
-    }
-}
-
 void dfs(int city)
 {
     if(visited[city]==0)
@@ -64,7 +44,6 @@ int main()
             if(visited[j]==0)
             {
                 ++cnt;
-                //bfs(j);
                 dfs(j);
             }
         }
