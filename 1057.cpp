@@ -34,7 +34,7 @@ int find(int lnum)
         res=sum(median);
         if(res<lnum)
             l=median+1;
-        else
+        else            //key step
             r=median-1;
     }
     return l;
