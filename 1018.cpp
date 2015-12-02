@@ -92,17 +92,13 @@ int main()
 				q[j]=remain[v[i][j]]-cmax/2;
 			else
 				q[j]=q[j-1]+remain[v[i][j]]-cmax/2;
-			//printf(" %d",q[j]);
 		}
-		//printf("\n");
 		min=INF;
 		for(j=0;j<v[i].size();++j)
 		{
-			//printf("now %d ",q[j]);
 			if(q[j]<min)
 				min=q[j];
 		}
-		//printf("\nmin = %d\n",min);
 		if(min<0)
 		{
 			send[i]=0-min;
@@ -115,7 +111,6 @@ int main()
 		}
 		if(send[i]<in)
 			in=send[i];
-		//printf("send = %d,back = %d\n",send[i],back[i]);
 	}
 	min=INF;
 	for(i=0;i<cnt;++i)
@@ -124,44 +119,6 @@ int main()
 			min=back[i];
 			u=i;
 		}
-	//printf("cnt = %d\n",cnt);
-	/*for(i=0;i<cnt;++i)
-	{
-		p[i]=0;
-		for(j=0;j<v[i].size();++j)
-			if(remain[v[i][j]]>cmax/2)
-				p[i]+=remain[v[i][j]]-cmax/2;
-		if(p[i]==need)
-		{
-			u=i;
-			break;
-		}
-		if(p[i]>need)
-			f=true;
-		//printf("p = %d\n",p[i]);
-	}
-	if(u==-1)
-	{
-		//printf("t\n");
-		if(f)
-		{
-			for(i=0;i<cnt;++i)
-				if(p[i]>need&&p[i]-need<min)
-				{
-					min=p[i]-need;
-					u=i;
-				}
-		}
-		else
-		{
-			for(i=0;i<cnt;++i)
-				if(need-p[i]<min)
-				{
-					min=need-p[i];
-					u=i;
-				}
-		}
-	}*/
 	printf("%d ",send[u]);
 	printf("0->");
 	for(i=0;i<v[u].size();++i)
