@@ -51,9 +51,9 @@ Record stor(char *s)
 int main()
 {
     for(int i=0;i<24;++i)
-        cin>>price[i];
+        scanf("%d",&price[i]);
     int n;
-    cin>>n;
+    scanf("%d",&n);
     getchar();
     for(int i=0;i<n;++i)
     {
@@ -95,7 +95,6 @@ int main()
             Record on=it->second[i];
             Record off=it->second[i+1];
             month=on.month;
-            //printf("%s %d:%d:%d:%d %d\n",r.name.c_str(),r.month,r.day,r.hour,r.minute,r.flag);
             Bill b;
             b.sday=on.day;b.shour=on.hour;b.smin=on.minute;
             b.eday=off.day;b.ehour=off.hour;b.emin=off.minute;
