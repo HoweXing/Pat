@@ -3,7 +3,7 @@
 #include <algorithm>
 using namespace std;
 
-int weight[1001],rank[1001];
+int weight[1001],Rank[1001];
 int n,group,groupnum;
 vector<int> src,dst,cmp;
 
@@ -28,7 +28,6 @@ int main()
         groupnum=src.size()/group;
         if(src.size()>group*groupnum)
             ++groupnum;
-        //printf("%d %d\n",src.size(),groupnum);
         int k=0;
         for(int i=0;i<groupnum;++i)
         {
@@ -37,22 +36,20 @@ int main()
                 cmp.push_back(src[k++]);
             sort(cmp.begin(),cmp.end(),comp);
             for(int j=1;j<cmp.size();++j)
-                rank[cmp[j]]=groupnum+1;
-            //printf("push %d\n",cmp[0]);
+                Rank[cmp[j]]=groupnum+1;
             dst.push_back(cmp[0]);
         }
         src.clear();
         for(int i=0;i<dst.size();++i)
             src.push_back(dst[i]);
         dst.clear();
-        //system("pause");
     }
-    rank[src[0]]=1;
+    Rank[src[0]]=1;
     for(int i=0;i<n;++i)
     {
         if(i>0)
             printf(" ");
-        printf("%d",rank[i]);
+        printf("%d",Rank[i]);
     }
     return 0;
 }
