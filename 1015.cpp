@@ -42,9 +42,9 @@ int main()
                 base*=radix;
             }
             if(isprime(rnum))
-                printf("Yes\n");
+                cout<<"Yes"<<endl;
             else
-                printf("No\n");
+                cout<<"No"<<endl;
         }
     }
     return 0;

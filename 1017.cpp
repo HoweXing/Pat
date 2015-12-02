@@ -15,7 +15,7 @@ struct Cus{
 int main()
 {
     int n,k;
-    cin>>n>>k;
+    scanf("%d%d",&n,&k);
     getchar();
     char line[20];
     priority_queue<Cus> q;
