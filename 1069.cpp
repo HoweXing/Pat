@@ -34,7 +34,6 @@ char* sub(char *first, char *second)
 int main()
 {
     gets(src);
-    printf("src %04s\n",src);
     if(strlen(src)!=4)
     {
         int n=atoi(src);
